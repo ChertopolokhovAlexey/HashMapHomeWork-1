@@ -1,4 +1,5 @@
 //https://github.com/ChertopolokhovAlexey/HashMapHomeWork-1.git
+
 import java.util.*;
 
 public class Main {
@@ -21,7 +22,7 @@ public class Main {
     }
 
 
-    public static void stringToChar(String[] roll, List list) {
+    public static void stringToChar(String[] roll, List<Character> list) {
         for (String s : roll) {
             char letter = s.charAt(0);
             if (Character.isLetter(letter)) {
@@ -30,15 +31,15 @@ public class Main {
         }
     }
 
-    public static void listToMap(Map map, List list) {
-        for (Object o : list) {
-            if (map.containsKey(o)) {
-                int i = (int) map.get(o);
+    public static void listToMap(Map<Character, Integer> map, List<Character> list) {
+        for (Character c : list) {
+            if (map.containsKey(c)) {
+                int i = map.get(c);
                 i++;
-                map.put(o, i);
+                map.put(c, i);
                 continue;
             }
-            map.put(o, 1);
+            map.put(c, 1);
         }
     }
 
